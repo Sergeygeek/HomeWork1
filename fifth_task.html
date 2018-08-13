@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<script>
+    'use strict';
+
+    // Сохраним число в переменную
+    let userTicket = +prompt('Введите шестизначный номер билета');
+
+    // Разобъем число на отдельные цифры
+    let sixthNumber = userTicket % 10;
+    let fifthNumber = (userTicket % 100 - sixthNumber) / 10;
+    let fourthNumber = (userTicket % 1000 - userTicket % 100) / 100;
+    let thirdNumber = (userTicket % 10000 - userTicket % 1000) / 1000;
+    let secondNumber = (userTicket % 100000 - userTicket % 10000) / 10000;
+    let firstNumber = (userTicket % 1000000 - userTicket % 100000) / 100000;
+
+    // Посчитаем сумму правой и левой части
+    let rightSideSum = firstNumber + secondNumber + thirdNumber;
+    let leftSideSum = sixthNumber + fifthNumber + fourthNumber;
+
+    // Проверка на равенство
+    if (rightSideSum === leftSideSum) {
+        alert('Вы купили счастливый билет!!!');
+    } else {
+        alert('Вам не повезло');
+    }
+</script>

@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+    'use strict';
+    
+    // Пользователь вводит температуру в Цельсиях
+    let celcium = +prompt('Введите температуру в градусах Цельсия');
+
+    // // Check if number
+    // if (celcium !== celcium) {
+    //     alert('Вы ввели не число');
+    // } else {
+    //     // If number count
+    //     let farenheit = (9 / 5) * celcium + 32;
+    //     alert(`Температура в градусах по Фаренгейту равна: ${farenheit}`);
+    // }
+
+    // Лучше бы здесь использовать функцию
+    function countFarenheit(celcium) {
+        // Check if number
+        if (celcium !== celcium) {
+            alert('Вы ввели не число');
+
+            // Просим ввести еще раз
+            celcium = +prompt('Введите температуру в градусах Цельсия еще раз');
+            // Вызываем функцию
+            countFarenheit(celcium);
+        } else {
+            // If number count
+            let farenheit = (9 / 5) * celcium + 32;
+            alert(`Температура в градусах по Фаренгейту равна: ${farenheit}`);
+        }
+    }
+    countFarenheit(celcium);
+</script>
